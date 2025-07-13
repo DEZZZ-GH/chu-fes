@@ -30,20 +30,20 @@ const features = [
 
 export default function FeatureShowcase() {
   return (
-    <section className="w-full bg-white py-16">
-      <h2 className="text-3xl font-bold text-center mb-10">À la découverte du CHU Hassan II</h2>
-      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-10">
+    <section className="w-full bg-gradient-to-b from-white to-gray-50 py-16 pt-4">
+      <h2 className="text-5xl font-bold text-center mb-10 drop-shadow-xl">À la découverte du CHU Hassan II</h2>
+      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
         {features.map((feature, index) => (
-          <div key={index} className="bg-white rounded-lg shadow-md p-4">
+          <div key={index} className="bg-white rounded-2xl shadow-md p-4 flex flex-col justify-center hover:-translate-y-1 transition-transform hover:shadow-lg">
             <Image
               src={feature.image}
               alt={feature.title}
               width={500}
               height={220}
-              className="rounded-t-lg object-cover h-[220px] w-full"
+              className="rounded-t-2xl object-cover h-[220px] w-full transition-transform hover:scale-105"
               priority
             />
-            <h3 className="text-xl font-semibold mt-4">{feature.title}</h3>
+            <h3 className="text-2xl font-semibold mt-4 text-blue-900">{feature.title}</h3>
             <p className="text-gray-600">{feature.subtitle}</p>
           </div>
         ))}
@@ -51,5 +51,6 @@ export default function FeatureShowcase() {
     </section>
   );
 }
+
 
  
