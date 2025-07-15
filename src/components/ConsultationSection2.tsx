@@ -1,4 +1,12 @@
+import React from 'react';
+
 export default function ConsultationSection2() {
+  const documents = [
+    "ID (CNI, Passport)",
+    "Carte mutuelle ou carte RAMED",
+    "Bon d'orientation du médecin référent (si RAMED)"
+  ];
+
   return (
     <section className="bg-gradient-to-r from-blue-50 to-blue-100 py-10 px-8">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
@@ -14,18 +22,20 @@ export default function ConsultationSection2() {
 
         {/* TEXT RIGHT */}
         <div className="sticky top-0">
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mb-6 text-center whitespace-nowrap">
-  MODALITÉS DE RENDEZ-VOUS
-</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mb-8 text-center">
+            MODALITÉS DE RENDEZ-VOUS
+          </h2>
 
           <p className="text-gray-800 text-base mb-4 leading-relaxed">
             Pour prendre votre rendez-vous de consultation, vous devez vous présenter au Centre de Consultations Externes (CCE) situé au bâtiment I, muni des documents suivants :
           </p>
+
           <ul className="list-disc list-inside text-gray-800 text-sm mb-4 space-y-1">
-            <li>ID (CNI, Passport)</li>
-            <li>Carte mutuelle ou carte RAMED</li>
-            <li>Bon d'orientation du médecin référent (si RAMED)</li>
+            {documents.map((doc, index) => (
+              <li key={index}>{doc}</li>
+            ))}
           </ul>
+
           <p className="text-gray-800 text-base leading-relaxed">
             Les horaires de consultation sont indiqués sur les fiches de rendez-vous avec une note invitant à se présenter au Bureau des Admissions et de la Facturation (BAF) une heure avant le rendez-vous pour effectuer les formalités administratives.
           </p>
@@ -34,4 +44,3 @@ export default function ConsultationSection2() {
     </section>
   );
 }
-
