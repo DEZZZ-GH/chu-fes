@@ -1,34 +1,37 @@
 export default function ConsultationSection2() {
   return (
-    <section className="bg-white py-16 px-6">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+    <section className="bg-gradient-to-r from-blue-50 to-blue-100 py-10 px-8">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+
         {/* IMAGE LEFT */}
-        <div>
+        <div className="overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
           <img
             src="/images/consultation/section2.jpg"
-            alt="Prise de rendez-vous"
-            className="w-full h-full object-cover rounded-lg shadow-lg"
+            alt="Appointment booking"
+            className="w-full h-auto max-h-64 object-cover"
           />
         </div>
 
         {/* TEXT RIGHT */}
-        <div>
-          <h2 className="text-3xl font-bold text-blue-900 mb-6">
-            FORMALITÉS DE PRISE DE RENDEZ-VOUS
-          </h2>
-          <p className="text-gray-700 mb-4 leading-relaxed">
-            Pour prendre votre rendez-vous de consultation, vous devez vous présenter au centre de consultation externe (CCE) situé au bâtiment I, munis des documents suivants :
+        <div className="sticky top-0">
+          <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mb-6 text-center whitespace-nowrap">
+  MODALITÉS DE RENDEZ-VOUS
+</h2>
+
+          <p className="text-gray-800 text-base mb-4 leading-relaxed">
+            Pour prendre votre rendez-vous de consultation, vous devez vous présenter au Centre de Consultations Externes (CCE) situé au bâtiment I, muni des documents suivants :
           </p>
-          <ul className="list-disc list-inside text-gray-700 mb-4 space-y-1">
-            <li>Pièce d’identité (CNI, Passeport) ;</li>
-            <li>Carte mutuelle ou carte RAMED ;</li>
-            <li>Fiche de liaison ou de référence établit par votre médecin de référence si vous disposez du RAMED;</li>
+          <ul className="list-disc list-inside text-gray-800 text-sm mb-4 space-y-1">
+            <li>ID (CNI, Passport)</li>
+            <li>Carte mutuelle ou carte RAMED</li>
+            <li>Bon d'orientation du médecin référent (si RAMED)</li>
           </ul>
-          <p className="text-gray-700 leading-relaxed">
-            Les horaires de consultations sont indiqués sur les bons de RDV avec la mention de se présenter au Bureau des Admissions et de Facturation (BAF) une heure avant le RDV afin d’accomplir les démarches administratives.
+          <p className="text-gray-800 text-base leading-relaxed">
+            Les horaires de consultation sont indiqués sur les fiches de rendez-vous avec une note invitant à se présenter au Bureau des Admissions et de la Facturation (BAF) une heure avant le rendez-vous pour effectuer les formalités administratives.
           </p>
         </div>
       </div>
     </section>
   );
 }
+
