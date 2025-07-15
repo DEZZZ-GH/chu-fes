@@ -6,12 +6,6 @@ const newsItems = [
     date: "FÉV 2025"
   },
   {
-    title: "Assises Franco-Marocaines du Thermalisme",
-    description: "Première édition à la faculté de médecine de Fès.",
-    image: "/images/news/accueil-s2-2.jpeg",
-    date: "FÉV 2025"
-  },
-  {
     title: "Intégration du personnel Infirmier",
     description: "Nouvellement recrutés, un seul centre, une seule équipe.",
     image: "/images/news/accueil-s2-3.png",
@@ -27,6 +21,12 @@ const newsItems = [
     title: "Horaires Ramadan 1446 AH / 2025 AD",
     description: "Annonce concernant l’ouverture pendant le mois béni.",
     image: "/images/news/accueil-s2-5.jpg",
+    date: "FÉV 2025"
+  }, 
+  {
+    title: "Assises Franco-Marocaines du Thermalisme",
+    description: "Première édition à la faculté de médecine de Fès.",
+    image: "/images/news/accueil-s2-2.jpeg",
     date: "FÉV 2025"
   },
   {
