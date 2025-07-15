@@ -47,7 +47,7 @@ export default function NewsSection() {
         {newsItems.map((item, index) => (
           <div
   key={index}
-  className={`relative group flex gap-6 items-center rounded-lg shadow-md transition-transform hover:scale-105 ${
+  className={`relative group flex flex-col md:flex-row gap-6 items-center rounded-lg shadow-md transition-transform hover:scale-105 ${
     index % 2 === 0 ? '' : 'md:flex-row-reverse'
   }`}
 >
@@ -56,7 +56,7 @@ export default function NewsSection() {
     alt={item.title}
     className="w-full h-64 object-cover rounded-lg shadow-md md:w-1/2"
   />
-  <div className="md:w-1/2 space-y-2 p-4">
+  <div className="w-full md:w-1/2 space-y-2 p-4">
     <span className="absolute top-4 left-4 bg-blue-200 text-blue-800 text-xs font-semibold px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition">
       {item.date}
     </span>
@@ -64,7 +64,6 @@ export default function NewsSection() {
     <p className="text-gray-600">{item.description}</p>
   </div>
 </div>
-
         ))}
       </div>
     </section>
