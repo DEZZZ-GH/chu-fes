@@ -7,12 +7,12 @@ import ConsultationSection4 from "@/components/ConsultationSection4";
 
 export default function ConsultationPage() {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <ConsultationSection1 />
       <ConsultationSection2 />
       <ConsultationSection3 />
       <ConsultationSection4 />
-
-    </>
+    </div>
   );
 }
+

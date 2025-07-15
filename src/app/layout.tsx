@@ -24,7 +24,13 @@ import Footer from '@/components/Footer';
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
-      <body className="font-sans antialiased">
+      <head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+        />
+      </head>
+      <body className="font-sans antialiased overflow-x-hidden">
         <Header />
         <main className="min-h-screen px-4 py-8 max-w-6xl mx-auto">
           {children}
@@ -34,3 +40,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+
