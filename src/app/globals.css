@@ -45,9 +45,10 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
-} 
-
-* {
-  outline: 1px solid red !important;
+}  
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
 }
+
 
