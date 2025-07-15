@@ -23,7 +23,7 @@ const ConsultationSection1: React.FC = () => {
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         
         {/* TEXT COLUMN */}
-        <div className="sticky top-0">
+        <div className="md:sticky md:top-0">
           <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mb-8 text-center">
             Votre Consultation
           </h2>

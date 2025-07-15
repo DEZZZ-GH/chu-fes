@@ -9,10 +9,10 @@ export default function ConsultationSection2() {
 
   return (
     <section className="bg-gradient-to-r from-blue-50 to-blue-100 py-10 px-8">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-
-        {/* IMAGE LEFT */}
-        <div className="overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        
+        {/* IMAGE COLUMN */}
+        <div className="w-full overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
           <img
             src="/images/consultation/section2.jpg"
             alt="Appointment booking"
@@ -20,8 +20,8 @@ export default function ConsultationSection2() {
           />
         </div>
 
-        {/* TEXT RIGHT */}
-        <div className="sticky top-0">
+        {/* TEXT COLUMN */}
+        <div className="w-full sticky top-0">
           <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mb-8 text-center">
             MODALITÉS DE RENDEZ-VOUS
           </h2>
