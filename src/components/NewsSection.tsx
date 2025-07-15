@@ -28,13 +28,13 @@ const newsItems = [
     description: "Annonce concernant l’ouverture pendant le mois béni.",
     image: "/images/news/accueil-s2-5.jpg",
     date: "FÉV 2025"
-  }, 
+  },
   {
-  title: "Session de formation le 10 et 11 Février 2025",
-  description: "Des sessions d’intégration pour les ingénieurs, administrateurs et techniciens nouvellement recrutés.",
-  image: "/images/news/accueil-s2-6.jpeg",
-  date: "FÉV 2025"
-}
+    title: "Session de formation le 10 et 11 Février 2025",
+    description: "Des sessions d’intégration pour les ingénieurs, administrateurs et techniciens nouvellement recrutés.",
+    image: "/images/news/accueil-s2-6.jpeg",
+    date: "FÉV 2025"
+  }
 ];
 
 export default function NewsSection() {
@@ -46,26 +46,29 @@ export default function NewsSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {newsItems.map((item, index) => (
           <div
-  key={index}
-  className={`relative group flex flex-col md:flex-row gap-6 items-center rounded-lg shadow-md transition-transform hover:scale-105 ${
-    index % 2 === 0 ? '' : 'md:flex-row-reverse'
-  }`}
->
-  <img
-    src={item.image}
-    alt={item.title}
-    className="w-full h-64 object-cover rounded-lg shadow-md md:w-1/2"
-  />
-  <div className="w-full md:w-1/2 space-y-2 p-4">
-    <span className="absolute top-4 left-4 bg-blue-200 text-blue-800 text-xs font-semibold px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition">
-      {item.date}
-    </span>
-    <h3 className="text-xl font-semibold text-blue-800">{item.title}</h3>
-    <p className="text-gray-600">{item.description}</p>
-  </div>
-</div>
+            key={index}
+            className="relative group rounded-lg shadow-md transition-transform hover:scale-105 overflow-hidden"
+          >
+            <div className={`flex flex-col md:flex-row ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''} items-center`}>
+              <div className="w-full md:w-1/2 flex items-center justify-center p-4">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="object-contain max-h-64 w-full rounded-lg"
+                />
+              </div>
+              <div className="w-full md:w-1/2 p-4 flex flex-col justify-center space-y-2">
+                <span className="absolute top-4 left-4 bg-blue-200 text-blue-800 text-xs font-semibold px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition">
+                  {item.date}
+                </span>
+                <h3 className="text-xl font-semibold text-blue-800">{item.title}</h3>
+                <p className="text-gray-600">{item.description}</p>
+              </div>
+            </div>
+          </div>
         ))}
       </div>
     </section>
   );
 }
+
