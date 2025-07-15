@@ -1,11 +1,13 @@
+import React from 'react';
+
 const ConsultationSection3: React.FC = () => {
   return (
-    <section className="bg-gradient-to-r from-blue-50 to-blue-100 py-20 px-6 animate-fade-in">
+    <section className="bg-gradient-to-r from-blue-50 to-blue-100 py-20 px-4 animate-fade-in overflow-hidden">
       <div className="max-w-7xl mx-auto">
 
         {/* Title & Intro */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-4 whitespace-nowrap">
+          <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-4 break-words text-center">
             FORMALITÉS DE RÈGLEMENT LE JOUR DU RENDEZ-VOUS
           </h2>
           <p className="text-gray-700 text-base leading-relaxed">
@@ -63,4 +65,3 @@ const ConsultationSection3: React.FC = () => {
 };
 
 export default ConsultationSection3;
-

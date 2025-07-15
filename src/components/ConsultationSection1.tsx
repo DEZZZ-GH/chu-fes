@@ -19,18 +19,18 @@ const ConsultationSection1: React.FC = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-r from-blue-50 to-blue-100 py-10 px-8">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <section className="bg-gradient-to-r from-blue-50 to-blue-100 px-4 py-12 overflow-x-hidden">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-start">
         
         {/* TEXT COLUMN */}
-        <div className="md:sticky md:top-0">
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mb-8 text-center">
+        <div className="md:sticky md:top-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mb-8 text-center md:text-left">
             Votre Consultation
           </h2>
           {consultationDetails.map((item, index) => (
             <p
               key={index}
-              className="text-gray-800 text-base leading-relaxed mb-4 transition duration-300 transform hover:scale-105"
+              className="text-gray-800 text-base leading-relaxed mb-4 transition duration-300 transform hover:scale-[1.02]"
             >
               {item.text}
               {item.email && (
