@@ -11,7 +11,7 @@ const ExamenRemarque: React.FC = () => {
         </h2>
 
         {/* Blue Info Box */}
-        <div className="bg-blue-50 border border-blue-200 rounded-xl shadow-sm p-6">
+        <div className="bg-blue-50 border border-blue-200 rounded-2xl shadow-sm p-6 transition-shadow duration-300 hover:shadow-xl">
           <ul className="list-disc list-inside text-gray-800 text-sm md:text-base space-y-4">
             <li>
               Avant de se rendre à la régie pour le règlement des frais de votre examen,
@@ -32,3 +32,4 @@ const ExamenRemarque: React.FC = () => {
 };
 
 export default ExamenRemarque;
+
