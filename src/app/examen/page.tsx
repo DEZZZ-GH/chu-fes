@@ -1,10 +1,11 @@
 import ExamenHero from '@/components/ExamenHero';
+import ExamenRemarque from '@/components/ExamenRemarque'; 
 
 export default function ExamenPage() {
   return (
     <>
       <ExamenHero />
-      {/* Other sections like Remarque, Accordéons, etc. */}
+      <ExamenRemarque />
     </>
   );
 }
