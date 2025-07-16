@@ -5,16 +5,22 @@ import Link from 'next/link';
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
 
   const toggleMenu = () => setIsMenuOpen(prev => !prev);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  setMounted(true); // ensure dynamic logic only runs after hydration
+
+  const handleScroll = () => {
+    setIsScrolled(window.scrollY > 10);
+  };
+
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
+
 
   const navLinks = [
     { path: '/', label: 'Accueil' },
@@ -32,9 +38,10 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 z-50 w-full h-25 transition-colors duration-300 ${
-          isScrolled ? 'bg-[#D6F0FF]/80 backdrop-blur-md shadow' : 'bg-[#f9fafb]'
-        } text-[#1e3a8a] py-4 px-4`}
+        className={`fixed top-0 z-50 w-full ${
+  mounted && isScrolled ? 'bg-[#D6F0FF]/80 backdrop-blur-md shadow h-25' : 'bg-[#f9fafb] h-24'
+} text-[#1e3a8a] transition-colors duration-300 py-4 px-4`}
+
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo - always visible */}
