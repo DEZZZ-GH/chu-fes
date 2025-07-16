@@ -1,36 +1,26 @@
-
-// import { Geist, Geist_Mono } from "next/font/google";
-// import "./globals.css";
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
-
+// src/app/layout.tsx
 import './globals.css';
-
+import { Inter } from 'next/font/google';
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
-
-
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr">
+    <html lang="fr" className={inter.className}>
       <head>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
         />
       </head>
-      <body className="font-sans antialiased overflow-x-hidden">
+      <body className="antialiased overflow-x-hidden">
         <Header />
         <main className="min-h-screen px-4 py-8 max-w-6xl mx-auto mt-32 sm:mt-20">
           {children}
@@ -40,4 +30,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+
 

@@ -1,4 +1,7 @@
-/* src/app/globals.css */ 
+/* src/app/globals.css */
+
+/* Load Tailwind first */
+@import "tailwindcss";
 
 /* Force full width and disable horizontal scroll */
 html, body {
@@ -8,16 +11,14 @@ html, body {
   touch-action: pan-y; 
 }
 
-/* Prevent user zooming on mobile (redundant safety) */
+/* Prevent text resizing/zooming on mobile */
 body {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
 
-@import "tailwindcss";
-
-/* your custom CSS variables below, if any */
+/* CSS Variables for color themes */
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -30,9 +31,14 @@ body {
   }
 }
 
+/* Custom animations */
 @layer utilities {
   .animate-fade-in {
     animation: fade-in 0.8s ease-in-out both;
+  }
+
+  .animate-slide-in {
+    animation: slide-in 0.3s ease-out both;
   }
 }
 
@@ -45,6 +51,16 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
-} 
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
 
 
