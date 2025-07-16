@@ -39,7 +39,7 @@ export default function Header() {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo - always visible */}
           <div className="flex items-center">
-            <img src="/images/logo.png" alt="Logo CHU" className="h-16 sm:h-20" />
+            <img src="/images/logo.png" alt="Logo CHU" className="h-20  sm:h-24" />
           </div>
 
           {/* Desktop Nav - only on sm+ */}
