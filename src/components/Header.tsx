@@ -32,14 +32,14 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 z-50 w-full h-20 transition-colors duration-300 ${
+        className={`fixed top-0 z-50 w-full h-25 transition-colors duration-300 ${
           isScrolled ? 'bg-[#D6F0FF]/80 backdrop-blur-md shadow' : 'bg-[#f9fafb]'
         } text-[#1e3a8a] py-4 px-4`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo - always visible */}
           <div className="flex items-center">
-            <img src="/images/logo.png" alt="Logo CHU" className="h-20  sm:h-24" />
+            <img src="/images/logo.png" alt="Logo CHU" className="h-18  sm:h-22" />
           </div>
 
           {/* Desktop Nav - only on sm+ */}
