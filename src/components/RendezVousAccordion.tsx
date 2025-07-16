@@ -63,7 +63,7 @@ const AccordionItem = ({ title, content, isOpen, onClick }: any) => (
     </button>
     {isOpen && (
       <div className="bg-blue-50 px-6 py-4 text-gray-800 text-sm leading-relaxed">
-        <ul className="list-disc list-inside space-y-2">
+        <ul className="list-none list-inside space-y-1">
           {content.map((line: string, i: number) => (
             <li key={i}>{line}</li>
           ))}
