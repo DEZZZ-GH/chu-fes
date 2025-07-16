@@ -6,7 +6,7 @@ export default function Hospitalisation() {
 
   const tabClasses = (tab: string) =>
     `text-sm sm:text-base font-semibold px-4 py-3 transition duration-200 ${
-      activeTab === tab ? 'bg-white text-gray-900' : 'text-white hover:bg-cyan-600'
+      activeTab === tab ? 'bg-white text-gray-900' : 'text-white hover:bg-blue-800'
     }`;
 
   return (
@@ -15,7 +15,7 @@ export default function Hospitalisation() {
       <div className="border-b border-cyan-500 w-24 mx-auto mb-8"></div>
 
       {/* Tabs */}
-      <div className="flex flex-wrap justify-center bg-cyan-500 rounded-t-md">
+      <div className="flex flex-wrap justify-center bg-blue-900 rounded-t-md">
         <button className={tabClasses('admission')} onClick={() => setActiveTab('admission')}>ADMISSION</button>
         <button className={tabClasses('sejour')} onClick={() => setActiveTab('sejour')}>SEJOUR</button>
         <button className={tabClasses('sortie')} onClick={() => setActiveTab('sortie')}>SORTIE</button>
