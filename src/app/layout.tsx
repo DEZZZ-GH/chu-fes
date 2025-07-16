@@ -32,7 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="font-sans antialiased overflow-x-hidden">
         <Header />
-        <main className="min-h-screen px-4 py-8 max-w-6xl mx-auto mt-20">
+        <main className="min-h-screen px-4 py-8 max-w-6xl mx-auto mt-32 sm:mt-20">
           {children}
         </main>
         <Footer />

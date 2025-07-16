@@ -39,7 +39,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-y-4">
         {/* Logo */}
         <div className="flex items-center">
-          <img src="/images/logo.png" alt="Logo CHU" className="h-20 mr-4" />
+          <img src="/images/logo.png" alt="Logo CHU" className="h-16 sm:h-20" />
         </div>
 
         {/* Burger button */}
@@ -61,18 +61,20 @@ export default function Header() {
 
         {/* Navigation links */}
         <nav
-          className={`transition-all duration-300 ease-in-out transform origin-top ${
-            isMenuOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0'
-          } sm:scale-y-100 sm:opacity-100 sm:flex flex-col sm:flex-row justify-center items-center gap-x-4 gap-y-4 text-base px-2 w-full sm:w-auto`}
-        >
+  className={`transition-all duration-300 ease-in-out transform origin-top bg-[#f9fafb] sm:bg-transparent ${
+    isMenuOpen ? 'scale-y-100 opacity-100 absolute top-full left-0 w-full z-40' : 'scale-y-0 opacity-0'
+  } sm:scale-y-100 sm:opacity-100 sm:static sm:flex flex-col sm:flex-row justify-center items-center gap-x-4 gap-y-4 text-base px-2`}
+>
           {navLinks.map(({ path, label }, index) => (
             <Link
-              key={index}
-              href={path}
-              className="whitespace-nowrap px-3 py-2 rounded-md hover:bg-[#dbeafe] transition duration-200"
-            >
-              {label}
-            </Link>
+  key={index}
+  href={path}
+  onClick={() => setIsMenuOpen(false)}
+  className="whitespace-nowrap px-3 py-2 rounded-md hover:bg-[#dbeafe] transition duration-200"
+>
+  {label}
+</Link>
+
           ))}
         </nav>
       </div>
