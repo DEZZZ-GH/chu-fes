@@ -28,15 +28,13 @@ const formations = {
 type Formations = typeof formations;
 type Slug = keyof Formations;
 
-interface PageProps {
-  params: {
-    slug: Slug; // Change from string to Slug
-  };
-  searchParams?: { [key: string]: string | string[] | undefined };
-}
-
-export default function FormationDetailPage({ params }: PageProps) {
-  const data = formations[params.slug]; // No need for type assertion now
+// Remove the custom PageProps interface and use inline typing instead
+export default function FormationDetailPage({
+  params,
+}: {
+  params: { slug: Slug };
+}) {
+  const data = formations[params.slug];
 
   if (!data) return notFound();
 
@@ -77,11 +75,11 @@ export default function FormationDetailPage({ params }: PageProps) {
 
 export async function generateStaticParams() {
   return Object.keys(formations).map((slug) => ({
-    slug: slug as Slug // Ensure type safety here
+    slug: slug as Slug
   }));
 }
 
-export function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: { params: { slug: Slug } }) {
   return {
     title: formations[params.slug].title
   };
