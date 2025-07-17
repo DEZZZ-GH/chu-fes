@@ -31,13 +31,15 @@ type Slug = keyof Formations;
 
 export async function generateStaticParams() {
   return Object.keys(formations).map((slug) => ({
-    slug: slug
+    slug
   }));
 }
 
-export async function generateMetadata(
-  { params }: { params: { slug: Slug } }
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: Slug };
+}): Promise<Metadata> {
   return {
     title: formations[params.slug].title,
   };
@@ -46,9 +48,8 @@ export async function generateMetadata(
 export default function Page({
   params,
 }: {
-  params: { slug: string }
+  params: { slug: string };
 }) {
-  // Type guard to ensure slug is valid
   if (!(params.slug in formations)) {
     return notFound();
   }
