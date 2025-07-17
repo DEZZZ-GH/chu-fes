@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import type { Metadata } from 'next';
 
 const formations = {
   formation1: {
@@ -24,44 +23,17 @@ const formations = {
     title: 'Formation Médicale continue: La COVID au CHU',
     detailImage: '/images/formations/formex5.png'
   },
-} as const;
+};
 
-type Formations = typeof formations;
-type Slug = keyof Formations;
+export default function FormationDetailPage({ params }: { params: { slug: string } }) {
+  const data = formations[params.slug as keyof typeof formations];
 
-export async function generateStaticParams() {
-  return Object.keys(formations).map((slug) => ({
-    slug
-  }));
-}
-
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: Slug };
-}): Promise<Metadata> {
-  return {
-    title: formations[params.slug].title,
-  };
-}
-
-export default function Page({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  if (!(params.slug in formations)) {
-    return notFound();
-  }
-
-  const data = formations[params.slug as Slug];
+  if (!data) return notFound();
 
   return (
     <main className="max-w-3xl mx-auto px-4 py-12">
-      <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-800 mb-4">
-        {data.title}
-      </h1>
-      <div className="border-b border-cyan-500 w-24 mx-auto mb-8"></div>
+      <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6">{data.title}</h1>
+
       {'detailImage' in data && (
         <div className="w-full mb-8">
           <Image
@@ -70,7 +42,6 @@ export default function Page({
             width={1000}
             height={1400}
             className="w-full h-auto rounded-xl"
-            priority
           />
         </div>
       )}
@@ -90,6 +61,7 @@ export default function Page({
     </main>
   );
 }
+
 
 
 
