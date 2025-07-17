@@ -23,18 +23,19 @@ const formations = {
     title: 'Formation Médicale continue: La COVID au CHU',
     detailImage: '/images/formations/formex5.png'
   },
-}; 
+} as const;
 type Slug = keyof typeof formations;
 
 interface PageProps {
   params: {
-    slug: Slug;
+    slug: string;
   };
   searchParams?: { [key: string]: string | string[] | undefined };
 }
 
 export default function FormationDetailPage({ params }: PageProps) {
-  const data = formations[params.slug];
+  const slug = params.slug as Slug;
+   const data = formations[slug];
 
   if (!data) return notFound();
 
