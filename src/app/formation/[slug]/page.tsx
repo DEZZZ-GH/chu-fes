@@ -32,9 +32,10 @@ type Slug = keyof Formations;
 export default function FormationDetailPage({
   params,
 }: {
-  params: { slug: Slug };
+  params: { slug: string };
 }) {
-  const data = formations[params.slug];
+  const slug = params.slug as Slug;
+  const data = formations[slug];
 
   if (!data) return notFound();
 
