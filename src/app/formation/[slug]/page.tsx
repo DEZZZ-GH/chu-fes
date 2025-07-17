@@ -73,8 +73,15 @@ export default function FormationDetailPage({ params }: PageProps) {
   );
 } 
 
-export function generateStaticParams() {
-  return Object.keys(formations).map((slug) => ({ slug }));
+export async function generateStaticParams() {
+  return [
+    { slug: 'formation1' },
+    { slug: 'formation2' },
+    { slug: 'formation3' },
+    { slug: 'formation4' },
+    { slug: 'formation5' },
+  ];
 }
+
 
 
