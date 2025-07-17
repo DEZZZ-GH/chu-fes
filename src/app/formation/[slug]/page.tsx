@@ -30,7 +30,7 @@ type Props = {
   };
 };
 
-export default function FormationDetailPage({ params }: Props) {
+export default async function FormationDetailPage({ params }: Props) {
   const data = formations[params.slug as keyof typeof formations];
 
   if (!data) return notFound();
