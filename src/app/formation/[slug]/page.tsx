@@ -1,6 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound } from 'next/navigation'; 
+type Props = {
+  params: {
+    slug: string;
+  };
+};
+
 
 const formations = {
   formation1: {
@@ -25,7 +31,7 @@ const formations = {
   },
 };
 
-export default function FormationDetailPage({ params }: { params: { slug: string } }) {
+export default function FormationDetailPage({ params }: Props) {
   const data = formations[params.slug as keyof typeof formations];
 
   if (!data) return notFound();
