@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { notFound } from 'next/navigation'; 
+import { notFound } from 'next/navigation';
 
 const formations = {
   formation1: {
@@ -24,26 +24,27 @@ const formations = {
     detailImage: '/images/formations/formex5.png'
   },
 } as const;
-type Slug = keyof typeof formations;
+
+type Formations = typeof formations;
+type Slug = keyof Formations;
 
 interface PageProps {
   params: {
-    slug: string;
+    slug: Slug; // Change from string to Slug
   };
   searchParams?: { [key: string]: string | string[] | undefined };
 }
 
 export default function FormationDetailPage({ params }: PageProps) {
-  const slug = params.slug as Slug;
-   const data = formations[slug];
+  const data = formations[params.slug]; // No need for type assertion now
 
   if (!data) return notFound();
 
   return (
     <main className="max-w-3xl mx-auto px-4 py-12">
-<h1 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-800 mb-4">
-  {data.title}
-</h1>
+      <h1 className="text-3xl sm:text-4xl font-extrabold text-center text-gray-800 mb-4">
+        {data.title}
+      </h1>
       <div className="border-b border-cyan-500 w-24 mx-auto mb-8"></div>
       {'detailImage' in data && (
         <div className="w-full mb-8">
@@ -53,6 +54,7 @@ export default function FormationDetailPage({ params }: PageProps) {
             width={1000}
             height={1400}
             className="w-full h-auto rounded-xl"
+            priority
           />
         </div>
       )}
@@ -71,16 +73,18 @@ export default function FormationDetailPage({ params }: PageProps) {
       </Link>
     </main>
   );
-} 
+}
 
 export async function generateStaticParams() {
-  return [
-    { slug: 'formation1' },
-    { slug: 'formation2' },
-    { slug: 'formation3' },
-    { slug: 'formation4' },
-    { slug: 'formation5' },
-  ];
+  return Object.keys(formations).map((slug) => ({
+    slug: slug as Slug // Ensure type safety here
+  }));
+}
+
+export function generateMetadata({ params }: PageProps) {
+  return {
+    title: formations[params.slug].title
+  };
 }
 
 
