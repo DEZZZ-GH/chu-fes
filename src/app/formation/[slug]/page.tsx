@@ -24,18 +24,17 @@ const formations = {
     detailImage: '/images/formations/formex5.png'
   },
 }; 
+type Slug = keyof typeof formations;
 
 interface PageProps {
   params: {
-    slug: string;
+    slug: Slug;
   };
   searchParams?: { [key: string]: string | string[] | undefined };
 }
 
-export default async function FormationDetailPage({ params }: PageProps) {
-
-
-  const data = formations[params.slug as keyof typeof formations];
+export default function FormationDetailPage({ params }: PageProps) {
+  const data = formations[params.slug];
 
   if (!data) return notFound();
 
@@ -71,5 +70,10 @@ export default async function FormationDetailPage({ params }: PageProps) {
       </Link>
     </main>
   );
+} 
+
+export function generateStaticParams() {
+  return Object.keys(formations).map((slug) => ({ slug }));
 }
+
 
