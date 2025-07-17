@@ -1,12 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation'; 
-type Props = {
-  params: {
-    slug: string;
-  };
-};
-
 
 const formations = {
   formation1: {
@@ -29,6 +23,11 @@ const formations = {
     title: 'Formation Médicale continue: La COVID au CHU',
     detailImage: '/images/formations/formex5.png'
   },
+}; 
+type Props = {
+  params: {
+    slug: string;
+  };
 };
 
 export default function FormationDetailPage({ params }: Props) {
