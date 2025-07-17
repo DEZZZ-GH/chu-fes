@@ -24,13 +24,17 @@ const formations = {
     detailImage: '/images/formations/formex5.png'
   },
 }; 
-type Props = {
+
+interface PageProps {
   params: {
     slug: string;
   };
-};
+  searchParams?: { [key: string]: string | string[] | undefined };
+}
 
-export default async function FormationDetailPage({ params }: Props) {
+export default async function FormationDetailPage({ params }: PageProps) {
+
+
   const data = formations[params.slug as keyof typeof formations];
 
   if (!data) return notFound();
