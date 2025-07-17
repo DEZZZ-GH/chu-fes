@@ -32,7 +32,7 @@ export default function Header() {
     { path: '/recherche', label: 'Recherche' },
     { path: '/videos', label: 'Vidéos' },
     { path: '/rapports', label: 'Rapports' },
-    { path: '/reglement', label: 'Règlement' },
+    { path: '/reglement', label: 'Règlements' },
   ];
 
   return (
