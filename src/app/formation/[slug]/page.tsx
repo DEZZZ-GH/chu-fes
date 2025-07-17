@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
 
 const formations = {
   formation1: {
@@ -28,16 +29,31 @@ const formations = {
 type Formations = typeof formations;
 type Slug = keyof Formations;
 
-// Remove the custom PageProps interface and use inline typing instead
-export default function FormationDetailPage({
+export async function generateStaticParams() {
+  return Object.keys(formations).map((slug) => ({
+    slug: slug
+  }));
+}
+
+export async function generateMetadata(
+  { params }: { params: { slug: Slug } }
+): Promise<Metadata> {
+  return {
+    title: formations[params.slug].title,
+  };
+}
+
+export default function Page({
   params,
 }: {
-  params: { slug: string };
+  params: { slug: string }
 }) {
-  const slug = params.slug as Slug;
-  const data = formations[slug];
+  // Type guard to ensure slug is valid
+  if (!(params.slug in formations)) {
+    return notFound();
+  }
 
-  if (!data) return notFound();
+  const data = formations[params.slug as Slug];
 
   return (
     <main className="max-w-3xl mx-auto px-4 py-12">
@@ -72,18 +88,6 @@ export default function FormationDetailPage({
       </Link>
     </main>
   );
-}
-
-export async function generateStaticParams() {
-  return Object.keys(formations).map((slug) => ({
-    slug: slug as Slug
-  }));
-}
-
-export async function generateMetadata({ params }: { params: { slug: Slug } }) {
-  return {
-    title: formations[params.slug].title
-  };
 }
 
 
