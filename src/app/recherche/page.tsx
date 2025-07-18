@@ -109,12 +109,6 @@ export default function RechercheModern() {
 </h1>
       <div className="border-b border-cyan-500 w-24 mx-auto mb-8"></div>
 
-<p className="max-w-3xl mx-auto text-gray-700 text-lg sm:text-xl text-justify leading-relaxed px-4 sm:px-0 mt-6">
-  La recherche constitue l’une des principales missions du <strong className="text-gray-700">Centre Hospitalier Universitaire Hassan II de Fès</strong>, indissociable du soin et de l'enseignement. 
-  Elle s’inscrit dans la volonté des professionnels d’offrir aux usagers des prises en charge actuelles et innovantes.
-</p>
-
- 
       {sections.map((section, index) => {
         const isOpen = openIndex === index;
         return (

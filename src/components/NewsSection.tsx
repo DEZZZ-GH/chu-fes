@@ -40,9 +40,12 @@ const newsItems = [
 export default function NewsSection() {
   return (
     <section className="bg-gray-50 py-16 px-6 max-w-7xl mx-auto">
-      <h2 className="text-3xl font-bold text-center mb-10 text-blue-900 tracking-wide underline">
+            <div className="max-w-7xl mx-auto text-center">
+        <h2 className="text-3xl font-bold text-gray-900 mb-4">
         Les Dernières Nouvelles
-      </h2>
+      </h2> 
+              <div className="w-20 h-1 bg-cyan-500 mx-auto mb-6" />
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {newsItems.map((item, index) => (
           <div
@@ -67,6 +70,7 @@ export default function NewsSection() {
             </div>
           </div>
         ))}
+      </div>
       </div>
     </section>
   );

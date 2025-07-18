@@ -29,7 +29,7 @@ export default function Header() {
     { path: '/examen', label: 'Examen' },
     { path: '/hospitalisation', label: 'Hospitalisation' },
     { path: '/formation', label: 'Formation' },
-    { path: '/recherche', label: 'Recherche' },
+    { path: '/recherche', label: 'Recherches' },
     { path: '/videos', label: 'Vidéos' },
     { path: '/rapports', label: 'Rapports' },
     { path: '/reglement', label: 'Règlements' },
