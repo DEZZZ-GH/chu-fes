@@ -10,7 +10,7 @@ export default function ReglementPage() {
       href: '/pdfs/reglement.pdf'
     },
     {
-      title: 'Charte d’utilisation des ressources informatiques',
+      title:'Charte d’utilisation des ressources informatiques',
       description: "Cette charte précise les règles d'utilisation des outils informatiques au sein du CHU Hassan II, garantissant la sécurité, la confidentialité et une utilisation responsable des ressources numériques.",
       href: '/pdfs/infocharte.pdf'
     }
