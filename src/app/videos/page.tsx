@@ -18,8 +18,7 @@ export default function VideothequePage() {
       <div className="border-b border-cyan-500 w-24 mx-auto mb-8"></div>
 
       <p className="text-center text-xl text-gray-700 mb-4">
-        Vidéothèque du centre hospitalier universitaire Hassan II
-      </p>
+Une sélection de vidéos informatives et reportages réalisés au sein du CHU Hassan II, illustrant les activités médicales, événements marquants et services spécialisés de l’établissement.      </p>
       <p className="text-center text-gray-500 mb-12">
         Double cliquez sur la vidéo pour la visualiser en plein écran
       </p>
