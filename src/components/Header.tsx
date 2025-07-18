@@ -30,7 +30,7 @@ export default function Header() {
     { path: '/hospitalisation', label: 'Hospitalisation' },
     { path: '/formation', label: 'Formation' },
     { path: '/recherche', label: 'Recherche' },
-    { path: '/videos', label: 'Vidéos' },
+    { path: '/vids', label: 'Vidéos' },
     { path: '/rapports', label: 'Rapports' },
     { path: '/reglement', label: 'Règlements' },
   ];
