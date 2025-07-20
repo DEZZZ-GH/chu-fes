@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import Link from 'next/link'; 
+import { HiMenuAlt3 } from 'react-icons/hi';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -64,60 +65,65 @@ export default function Header() {
 
           {/* Mobile Burger - only visible on mobile */}
           <div className="sm:hidden">
-            <button
-              className="p-2 rounded-md text-[#1e3a8a] hover:bg-[#dbeafe] transition"
-              onClick={toggleMenu}
-              aria-label="Toggle navigation"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-              </svg>
-            </button>
-          </div>
+  <button
+    className="p-3 rounded-md text-[#1e3a8a] hover:bg-[#dbeafe] transition"
+    onClick={toggleMenu}
+    aria-label="Toggle navigation"
+  >
+    <HiMenuAlt3 className="w-8 h-8 text-[#1e3a8a]" />
+  </button>
+</div>
         </div>
       </header>
 
       {/* MOBILE ONLY SIDEBAR NAV */}
       {isMenuOpen && (
-        <>
-          {/* Backdrop */}
-          <div
-            className="fixed inset-0 bg-black bg-opacity-40 z-40 sm:hidden"
-            onClick={() => setIsMenuOpen(false)}
-          />
+  <>
+    {/* ✅ Updated backdrop — was black, now blur+transparent */}
+    <div
+      className="fixed inset-0 backdrop-blur-sm bg-white/30 z-40 sm:hidden"
+      onClick={() => setIsMenuOpen(false)}
+    />
 
-          {/* Sidebar */}
-          <div className="fixed top-0 right-0 w-64 h-full bg-white z-50 shadow-xl sm:hidden animate-slide-in flex flex-col">
-            <div className="flex justify-end p-4">
-              <button
-                onClick={() => setIsMenuOpen(false)}
-                className="text-[#1e3a8a] hover:text-blue-500 text-xl"
-              >
-                ✕
-              </button>
-            </div>
-            <nav className="flex flex-col divide-y divide-blue-100">
-              {navLinks.map(({ path, label }, index) => (
-                <Link
-                  key={index}
-                  href={path}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="px-6 py-4 text-[#1e3a8a] hover:bg-[#dbeafe] hover:text-blue-900 transition font-medium"
-                >
-                  {label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-        </>
-      )}
-    </>
+    {/* Sidebar remains the same */}
+    <div className="fixed top-0 right-0 w-64 h-full bg-white z-50 shadow-xl sm:hidden animate-slide-in flex flex-col">
+      <div className="sm:hidden">
+  <button
+    onClick={toggleMenu}
+    aria-label="Toggle navigation"
+    className="relative w-10 h-10 flex flex-col justify-between items-center p-2 group"
+  >
+    <span
+      className={`block w-8 h-1 bg-[#1e3a8a] rounded transition-transform duration-300 ease-in-out 
+      ${isMenuOpen ? 'rotate-45 translate-y-3' : ''}`}
+    />
+    <span
+      className={`block w-8 h-1 bg-[#1e3a8a] rounded transition-opacity duration-200 ease-in-out 
+      ${isMenuOpen ? 'opacity-0' : ''}`}
+    />
+    <span
+      className={`block w-8 h-1 bg-[#1e3a8a] rounded transition-transform duration-300 ease-in-out 
+      ${isMenuOpen ? '-rotate-45 -translate-y-3' : ''}`}
+    />
+  </button>
+</div>
+
+      <nav className="flex flex-col divide-y divide-blue-100">
+        {navLinks.map(({ path, label }, index) => (
+          <Link
+            key={index}
+            href={path}
+            onClick={() => setIsMenuOpen(false)}
+            className="px-6 py-4 text-[#1e3a8a] hover:bg-[#dbeafe] hover:text-blue-900 transition font-medium"
+          >
+            {label}
+          </Link>
+        ))}
+      </nav>
+    </div>
+  </>
+)}
+</>
   );
 }
 
