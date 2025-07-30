@@ -1,6 +1,11 @@
 // src/app/valeurs/page.tsx
 
-import React from 'react';
+import React from 'react'; 
+
+export const metadata = {
+  title: "Nos Valeurs | CHU Hassan II",
+  description: "Les principes fondamentaux qui guident les actions et l’engagement du CHU Hassan II de Fès.",
+};
 
 const valeurs = [
   {

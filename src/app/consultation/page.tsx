@@ -3,6 +3,10 @@ import ConsultationSection2 from "@/components/ConsultationSection2";
 import ConsultationSection3 from "@/components/ConsultationSection3";
 import ConsultationSection4 from "@/components/ConsultationSection4";
 
+export const metadata = {
+  title: "Votre Consultation | CHU Hassan II",
+  description: "Informations essentielles pour prendre, modifier ou annuler une consultation au CHU Hassan II.",
+};
 
 
 export default function ConsultationPage() {

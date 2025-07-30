@@ -45,10 +45,10 @@ export default function Header() {
 
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          {/* Logo - always visible */}
-          <div className="flex items-center">
-            <img src="/images/logo.png" alt="Logo CHU" className="h-18  sm:h-22" />
-          </div>
+  {/* Logo - always visible */}
+  <Link href="/" className="flex items-center">
+    <img src="/images/logo.png" alt="Logo CHU" className="h-18 sm:h-22" />
+  </Link> 
 
           {/* Desktop Nav - only on sm+ */}
           <nav className="hidden sm:flex gap-x-1 items-center text-[1.0rem] font-medium font-inter">

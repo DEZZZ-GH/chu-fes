@@ -1,13 +1,17 @@
 'use client';
-import { useState } from 'react';
+import { useState } from 'react'; 
 
 export default function Hospitalisation() {
   const [activeTab, setActiveTab] = useState('admission');
 
   const tabClasses = (tab: string) =>
-    `text-sm sm:text-base font-semibold px-4 py-3 transition duration-200 ${
-      activeTab === tab ? 'bg-white text-gray-900' : 'text-white hover:bg-blue-800'
-    }`;
+  `text-sm sm:text-base font-semibold px-5 py-2.5 rounded-md transition duration-200
+   ${
+     activeTab === tab
+       ? 'bg-white text-blue-900 shadow border border-blue-200'
+       : 'text-blue-800 hover:bg-blue-100 hover:text-blue-900'
+   }`;
+
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
@@ -15,16 +19,16 @@ export default function Hospitalisation() {
       <div className="border-b border-cyan-500 w-24 mx-auto mb-8"></div>
 
       {/* Tabs */}
-      <div className="flex flex-wrap justify-center bg-blue-900 rounded-t-md">
+<div className="flex flex-wrap justify-center gap-4 bg-blue-50 border border-blue-200 rounded-t-xl px-6 py-3 shadow-sm">
         <button className={tabClasses('admission')} onClick={() => setActiveTab('admission')}>ADMISSION</button>
         <button className={tabClasses('sejour')} onClick={() => setActiveTab('sejour')}>SEJOUR</button>
         <button className={tabClasses('sortie')} onClick={() => setActiveTab('sortie')}>SORTIE</button>
         <button className={tabClasses('deces')} onClick={() => setActiveTab('deces')}>DECES D&apos;UN MALADE HOSPITALISE</button>
-      </div>
+      </div> 
 
       {/* Content */}
-      <div className="bg-gray-50 p-6 rounded-b-md shadow-inner text-justify">
-        {activeTab === 'admission' && (
+<div className="bg-white border border-blue-200 rounded-b-2xl shadow-inner p-6 text-justify">
+       {activeTab === 'admission' && (
           <div>
             <p>Le jour de votre hospitalisation, munissez-vous du bon de RDV qui vous a été remis à la suite de la consultation. Après, vous devez vous présenter au service prévu d’hospitalisation pour la récupération de la décision médicale d’hospitalisation.</p>
             <p className="mt-2">Enfin, vous acheminez au BAF muni des documents ci-après pour accomplir les formalités administratives nécessaires et ce, selon votre catégorie :</p>

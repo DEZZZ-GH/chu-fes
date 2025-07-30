@@ -1,5 +1,11 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import Link from 'next/link'; 
+
+export const metadata = {
+  title: "Formation Continue | CHU Hassan II",
+  description: "Programmes de formation continue destinés aux professionnels de santé au CHU Hassan II.",
+};
+
 
 const formations = [
   {
