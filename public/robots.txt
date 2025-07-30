@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chu-fes.ma/sitemap.xml
