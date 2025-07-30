@@ -1,4 +1,9 @@
+# *
 User-agent: *
 Allow: /
 
+# Host
+Host: https://chu-fes.vercel.app
+
+# Sitemaps
 Sitemap: https://chu-fes.vercel.app/sitemap.xml
